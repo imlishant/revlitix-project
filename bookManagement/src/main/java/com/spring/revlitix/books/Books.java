@@ -1,16 +1,31 @@
 package com.spring.revlitix.books;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Books {
+    @Id
     private String id;
     private String name;
+    private boolean isAvailable;
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
 
     public Books() {
-        
+        this.isAvailable = true;
     }
 
     public Books(String id, String name) {
         this.id = id;
         this.name = name;
+        this.isAvailable = true;
     }
 
     public String getId() {

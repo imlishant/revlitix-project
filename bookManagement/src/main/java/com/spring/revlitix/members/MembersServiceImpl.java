@@ -1,5 +1,8 @@
 package com.spring.revlitix.members;
 
-public class MembersServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class MembersServiceImpl implements MembersService {
     
 }

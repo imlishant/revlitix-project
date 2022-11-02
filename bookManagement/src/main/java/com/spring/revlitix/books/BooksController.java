@@ -50,7 +50,7 @@ public class BooksController {
         booksService.addBook(book);
     }
     
-    @GetMapping("/show")
+    @GetMapping("/viewall")
     public List<Books> getBooks() {
         return booksService.getAllBooks();
     }
@@ -94,7 +94,7 @@ public class BooksController {
     }
     
     //get all list
-    @GetMapping("/show")
+    @GetMapping("/viewall")
     public ResponseEntity<List<Books>> getBooks(@RequestParam(required = false) String title) {
 		try {
 			List<Books> booksList = new ArrayList<Books>();
@@ -113,7 +113,14 @@ public class BooksController {
 	}
 
     //update book by id
-    
+
+	/*
+	@PutMapping("/update/{id}")
+	public void updateBookbyId(@RequestBody Books book, @PathVariable int id) {
+		booksService.updateBookbyId(id, book);
+	}
+    */
+
 	@PutMapping("/update/{id}")
     public ResponseEntity<Books> updateBookbyId(@PathVariable("id") int id, @RequestBody Books book) {
 		Optional<Books> bookData = booksRepository.findById(id);
@@ -129,6 +136,15 @@ public class BooksController {
 	}
 	
     //delete book by id
+
+	/*
+	@DeleteMapping("/delete/{id}")
+	public void deleteBookById(@PathVariable int id) {
+		booksService.deleteBookById(id);
+	}
+	*/
+
+	
 	@DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteBookById(@PathVariable("id") int id) {
 		try {
@@ -138,6 +154,7 @@ public class BooksController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
 
 
 }

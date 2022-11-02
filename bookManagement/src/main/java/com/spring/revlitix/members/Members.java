@@ -35,9 +35,9 @@ public class Members {
 
     public Members() {}
 
-    public Members(String id, String name, String bookList) {
+    public Members(String id, String name) {
         this.memberId = id;
         this.memberName = name;
-        this.bookTaken = bookList;
+        this.bookTaken = "";
     }
 }

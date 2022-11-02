@@ -40,6 +40,11 @@ public class Books {
     public void setName(String name) {
         this.name = name;
     }
-
+    public void bookBorrowOne() {
+        this.isAvailable = false;
+    }
+    public void bookReturnOne() {
+        this.isAvailable = true;
+    }
 
 }

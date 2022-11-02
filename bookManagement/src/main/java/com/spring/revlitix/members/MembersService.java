@@ -1,5 +1,5 @@
 package com.spring.revlitix.members;
 
-public class MembersService {
+public interface MembersService {
     
 }
